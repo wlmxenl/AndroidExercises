@@ -13,3 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "AndroidExercises"
+include ':exercise-room'
