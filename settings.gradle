@@ -10,8 +10,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
 }
 rootProject.name = "AndroidExercises"
 include ':exercise-room'
 include ':exercise-customview'
+include ':lib_common'

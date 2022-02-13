@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_46"
+    tools:parentTag="android.widget.RelativeLayout">
+
+    <ImageView
+        android:id="@+id/iv_app_bar_back"
+        android:layout_width="@dimen/dp_46"
+        android:padding="@dimen/dp_10"
+        android:layout_height="@dimen/dp_46"
+        android:src="@mipmap/common_appbar_back" />
+
+    <TextView
+        android:id="@+id/tv_app_bar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_46"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/sp_18" />
+
+</merge>
