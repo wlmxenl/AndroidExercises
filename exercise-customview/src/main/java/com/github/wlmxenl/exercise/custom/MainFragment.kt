@@ -33,22 +33,25 @@ class MainFragment : BaseFragment<MainFragmentBinding>() {
 
         binderAdapter.addItemBinder(MainItemBinder())
         binderAdapter.setOnItemClickListener { adapter, _, position ->
-            val itemData = adapter.getItem(position) as Pair<String, Int>
+            val itemData = adapter.getItem(position) as Triple<String, Int, String>
             findNavController().navigate(itemData.second)
         }
         val demoList = mutableListOf<Any>().apply {
-            add(Pair("FlowTagLayout", R.id.flow_tag_fragment))
+            add(Triple("FlowTagLayout", R.id.flow_tag_fragment, "流式标签布局"))
         }
         binding.rvList.adapter = binderAdapter
         binderAdapter.setNewInstance(demoList)
     }
 
-    internal class MainItemBinder : QuickViewBindingItemBinder<Pair<String, Int>, MainRecycleItemBinding>() {
+    internal class MainItemBinder : QuickViewBindingItemBinder<Triple<String, Int, String>, MainRecycleItemBinding>() {
         override fun convert(
             holder: BinderVBHolder<MainRecycleItemBinding>,
-            data: Pair<String, Int>
+            data: Triple<String, Int, String>
         ) {
-            holder.viewBinding.tvDemoName.text = data.first
+            holder.viewBinding.run {
+                tvDemoName.text = data.first
+                tvDemoDesc.text = data.third
+            }
         }
 
         override fun onCreateViewBinding(
