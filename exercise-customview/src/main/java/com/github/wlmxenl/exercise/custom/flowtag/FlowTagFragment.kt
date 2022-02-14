@@ -3,6 +3,7 @@ package com.github.wlmxenl.exercise.custom.flowtag
 import android.os.Bundle
 import android.util.TypedValue
 import android.view.ViewGroup
+import androidx.core.view.setMargins
 import androidx.core.view.setPadding
 import com.github.wlmxenl.exercise.common.page.BaseFragment
 import com.github.wlmxenl.exercise.custom.databinding.FlowTagFragmentBinding
@@ -48,10 +49,12 @@ class FlowLayoutFragment : BaseFragment<FlowTagFragmentBinding>() {
             "瓦利斯和富图纳", "西撒哈拉", "也门", "赞比亚", "津巴布韦")
 
         for (element in countryList) {
+            val marginLayoutParams = ViewGroup.MarginLayoutParams(-2, -2)
+            // marginLayoutParams.setMargins(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4f, resources.displayMetrics).toInt())
             binding.flowTagLayout.addView(FlowTagView(requireActivity()).apply {
                 setPadding(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 6f, resources.displayMetrics).toInt())
                 setText(element)
-            })
+            }, marginLayoutParams)
         }
     }
 }

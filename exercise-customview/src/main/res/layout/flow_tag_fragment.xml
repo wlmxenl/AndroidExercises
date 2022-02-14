@@ -6,6 +6,7 @@
 
     <com.github.wlmxenl.exercise.custom.flowtag.FlowTagLayout
         android:id="@+id/flow_tag_layout"
+        app:ftl_item_spacing="@dimen/dp_8"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

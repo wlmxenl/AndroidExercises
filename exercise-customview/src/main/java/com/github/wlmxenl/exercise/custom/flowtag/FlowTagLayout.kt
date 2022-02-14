@@ -4,8 +4,11 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Rect
 import android.util.AttributeSet
+import android.util.TypedValue
 import android.view.ViewGroup
+import androidx.core.content.withStyledAttributes
 import androidx.core.view.children
+import com.github.wlmxenl.exercise.custom.R
 import kotlin.math.max
 
 /**
@@ -13,8 +16,15 @@ import kotlin.math.max
  * @Author wangzhengfu
  * @Date 2022/2/12
  */
-class FlowTagLayout(context: Context?, attrs: AttributeSet?) : ViewGroup(context, attrs) {
+class FlowTagLayout(context: Context, attrs: AttributeSet?) : ViewGroup(context, attrs) {
     private val childrenBounds = mutableListOf<Rect>()
+    private var itemSpacing = 0
+
+    init {
+        context.withStyledAttributes(attrs, R.styleable.FlowTagLayout) {
+            itemSpacing = getDimensionPixelSize(R.styleable.FlowTagLayout_ftl_item_spacing, 0)
+        }
+    }
 
     @SuppressLint("DrawAllocation")
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
@@ -28,11 +38,12 @@ class FlowTagLayout(context: Context?, attrs: AttributeSet?) : ViewGroup(context
         val widthMeasureSize = MeasureSpec.getSize(widthMeasureSpec)
 
         for ((index, child) in children.withIndex()) {
+            // measureChildWithMargins(child, widthMeasureSpec, 0, heightMeasureSpec, heightUsed)
             measureChild(child, widthMeasureSpec, heightMeasureSpec)
             // 测量模式限制宽高时设置换行
-            if (widthMeasureMode != MeasureSpec.UNSPECIFIED && lineWidthUsed + child.measuredWidth > widthMeasureSize) {
+            if (widthMeasureMode != MeasureSpec.UNSPECIFIED && lineWidthUsed + child.measuredWidth + itemSpacing > widthMeasureSize) {
                 lineWidthUsed = 0
-                heightUsed += lineMaxHeight
+                heightUsed += (lineMaxHeight + itemSpacing)
                 lineMaxHeight = 0
                 // 换行后高度变化在测量一次
                 // measureChild(child, widthMeasureSpec, heightMeasureSpec)
@@ -41,9 +52,13 @@ class FlowTagLayout(context: Context?, attrs: AttributeSet?) : ViewGroup(context
                 childrenBounds.add(Rect())
             }
             val childBounds = childrenBounds[index]
-            childBounds.set(lineWidthUsed, heightUsed, lineWidthUsed + child.measuredWidth, heightUsed + child.measuredHeight)
+            childBounds.set(
+                lineWidthUsed + itemSpacing,
+                heightUsed + itemSpacing,
+                lineWidthUsed + child.measuredWidth + itemSpacing,
+                heightUsed + child.measuredHeight + itemSpacing)
 
-            lineWidthUsed += child.measuredWidth
+            lineWidthUsed += (child.measuredWidth + itemSpacing)
             widthUsed = max(widthUsed, lineWidthUsed)
 
             lineMaxHeight = max(lineMaxHeight, child.measuredHeight)
@@ -73,6 +88,6 @@ class FlowTagLayout(context: Context?, attrs: AttributeSet?) : ViewGroup(context
      * @return
      */
     override fun generateDefaultLayoutParams(): LayoutParams {
-        return MarginLayoutParams(LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT))
+        return MarginLayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)
     }
 }
