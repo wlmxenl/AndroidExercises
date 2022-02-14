@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Rect
 import android.util.AttributeSet
-import android.util.TypedValue
 import android.view.ViewGroup
 import androidx.core.content.withStyledAttributes
 import androidx.core.view.children
@@ -29,9 +28,9 @@ class FlowTagLayout(context: Context, attrs: AttributeSet?) : ViewGroup(context,
     @SuppressLint("DrawAllocation")
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         var widthUsed = 0
-        var heightUsed = 0
+        var heightUsed = itemSpacing
 
-        var lineWidthUsed = 0
+        var lineWidthUsed = itemSpacing
         var lineMaxHeight = 0
 
         val widthMeasureMode = MeasureSpec.getMode(widthMeasureSpec)
@@ -41,8 +40,8 @@ class FlowTagLayout(context: Context, attrs: AttributeSet?) : ViewGroup(context,
             // measureChildWithMargins(child, widthMeasureSpec, 0, heightMeasureSpec, heightUsed)
             measureChild(child, widthMeasureSpec, heightMeasureSpec)
             // 测量模式限制宽高时设置换行
-            if (widthMeasureMode != MeasureSpec.UNSPECIFIED && lineWidthUsed + child.measuredWidth + itemSpacing > widthMeasureSize) {
-                lineWidthUsed = 0
+            if (widthMeasureMode != MeasureSpec.UNSPECIFIED && lineWidthUsed + child.measuredWidth + itemSpacing * 2 > widthMeasureSize) {
+                lineWidthUsed = itemSpacing
                 heightUsed += (lineMaxHeight + itemSpacing)
                 lineMaxHeight = 0
                 // 换行后高度变化在测量一次
@@ -52,18 +51,21 @@ class FlowTagLayout(context: Context, attrs: AttributeSet?) : ViewGroup(context,
                 childrenBounds.add(Rect())
             }
             val childBounds = childrenBounds[index]
+
+            // 子 View 左间距
+            val childLeftSpacing = if (lineWidthUsed == itemSpacing) 0 else itemSpacing
+
             childBounds.set(
-                lineWidthUsed + itemSpacing,
-                heightUsed + itemSpacing,
-                lineWidthUsed + child.measuredWidth + itemSpacing,
-                heightUsed + child.measuredHeight + itemSpacing)
+                lineWidthUsed + childLeftSpacing,
+                heightUsed,
+                lineWidthUsed + child.measuredWidth + childLeftSpacing,
+                heightUsed + child.measuredHeight)
+            lineWidthUsed += child.measuredWidth + childLeftSpacing
 
-            lineWidthUsed += (child.measuredWidth + itemSpacing)
             widthUsed = max(widthUsed, lineWidthUsed)
-
             lineMaxHeight = max(lineMaxHeight, child.measuredHeight)
         }
-        setMeasuredDimension(widthUsed, heightUsed + lineMaxHeight)
+        setMeasuredDimension(widthUsed, heightUsed + lineMaxHeight + itemSpacing)
     }
 
     override fun onLayout(changed: Boolean, l: Int, t: Int, r: Int, b: Int) {
