@@ -1,6 +1,9 @@
 package com.github.wlmxenl.exercise.custom.flowtag
 
 import android.os.Bundle
+import android.util.TypedValue
+import android.view.ViewGroup
+import androidx.core.view.setPadding
 import com.github.wlmxenl.exercise.common.page.BaseFragment
 import com.github.wlmxenl.exercise.custom.databinding.FlowTagFragmentBinding
 
@@ -44,6 +47,11 @@ class FlowLayoutFragment : BaseFragment<FlowTagFragmentBinding>() {
             "乌拉圭", "乌兹别克斯坦", "瓦努阿图", "委内瑞拉", "越南", "英属维尔京群岛", "美属维尔京群岛",
             "瓦利斯和富图纳", "西撒哈拉", "也门", "赞比亚", "津巴布韦")
 
-
+        for (element in countryList) {
+            binding.flowTagLayout.addView(FlowTagView(requireActivity()).apply {
+                setPadding(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 6f, resources.displayMetrics).toInt())
+                setText(element)
+            })
+        }
     }
 }

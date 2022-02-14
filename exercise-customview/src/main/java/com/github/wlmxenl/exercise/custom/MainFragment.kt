@@ -37,7 +37,7 @@ class MainFragment : BaseFragment<MainFragmentBinding>() {
             findNavController().navigate(itemData.second)
         }
         val demoList = mutableListOf<Any>().apply {
-            add(Pair("FlowTag", R.id.flow_tag_fragment))
+            add(Pair("FlowTagLayout", R.id.flow_tag_fragment))
         }
         binding.rvList.adapter = binderAdapter
         binderAdapter.setNewInstance(demoList)

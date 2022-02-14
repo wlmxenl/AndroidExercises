@@ -16,7 +16,7 @@ import kotlin.random.Random
  * @Author wangzhengfu
  * @Date 2022/2/12
  */
-class FlowTagView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
+class FlowTagView(context: Context, attrs: AttributeSet? = null) : View(context, attrs) {
 
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private var text = ""
@@ -46,5 +46,10 @@ class FlowTagView(context: Context, attrs: AttributeSet?) : View(context, attrs)
         // 绘制文本
         paint.color = Color.WHITE
         canvas.drawText(text, paddingStart.toFloat(), height.toFloat() - paddingTop, paint)
+    }
+
+    fun setText(text: String) {
+        this.text = text
+        invalidate()
     }
 }
