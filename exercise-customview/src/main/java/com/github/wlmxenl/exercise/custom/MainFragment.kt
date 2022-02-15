@@ -4,10 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.chad.library.adapter.base.BaseBinderAdapter
 import com.chad.library.adapter.base.binder.QuickViewBindingItemBinder
+import com.github.wlmxenl.exercise.common.navigation.navigate
 import com.github.wlmxenl.exercise.common.page.BaseFragment
 import com.github.wlmxenl.exercise.custom.databinding.MainFragmentBinding
 import com.github.wlmxenl.exercise.custom.databinding.MainRecycleItemBinding
@@ -34,7 +34,7 @@ class MainFragment : BaseFragment<MainFragmentBinding>() {
         binderAdapter.addItemBinder(MainItemBinder())
         binderAdapter.setOnItemClickListener { adapter, _, position ->
             val itemData = adapter.getItem(position) as Triple<String, Int, String>
-            findNavController().navigate(itemData.second)
+            navigate(itemData.second)
         }
         val demoList = mutableListOf<Any>().apply {
             add(Triple("FlowTagLayout", R.id.flow_tag_fragment, "流式标签布局"))
