@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavOptions
+import androidx.navigation.PopUpToBuilder
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navOptions
 import com.github.wlmxenl.exercise.common.R
@@ -27,19 +28,25 @@ fun Fragment.navigate(@IdRes actionId: Int, bundle: Bundle? = null, navOptions: 
     // 修改动画配置
     val newNavOptions = destNavOptions.let {
         navOptions {
-            // 添加默认跳转动画
-            if (it.enterAnim == -1 && it.exitAnim == -1 && it.popEnterAnim == -1 && it.popExitAnim == -1) {
-                anim {
-                    enter = R.anim.slide_in_right
-                    exit = R.anim.slide_out_left
-                    popEnter = R.anim.slide_in_left
-                    popExit = R.anim.slide_out_right
+            anim {
+                enter = if (it.enterAnim == -1) R.anim.slide_in_right else it.enterAnim
+                exit = if (it.exitAnim == -1) R.anim.slide_out_left else it.exitAnim
+                popEnter = if (it.popEnterAnim == -1) R.anim.slide_in_left else it.popEnterAnim
+                popExit = if (it.popExitAnim == -1) R.anim.slide_out_right else it.popExitAnim
+            }
+            if (it.popUpToRoute != null) {
+                popUpTo(it.popUpToRoute!!) {
+                    inclusive = it.isPopUpToInclusive()
+                    saveState = it.shouldPopUpToSaveState()
+                }
+            } else {
+                popUpTo(it.popUpToId) {
+                    inclusive = it.isPopUpToInclusive()
+                    saveState = it.shouldPopUpToSaveState()
                 }
             }
             launchSingleTop = it.shouldLaunchSingleTop()
-            popUpTo(it.popUpToId) {
-                inclusive = it.isPopUpToInclusive()
-            }
+            restoreState = it.shouldRestoreState()
         }
     }
     navController.navigate(actionId, bundle, newNavOptions)
