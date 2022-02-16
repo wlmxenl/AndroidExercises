@@ -38,6 +38,7 @@ class MainFragment : BaseFragment<MainFragmentBinding>() {
         }
         val demoList = mutableListOf<Any>().apply {
             add(Triple("FlowTagLayout", R.id.flow_tag_fragment, "流式标签布局"))
+            add(Triple("HalfCircleView", R.id.half_circle_fragment, "半圆"))
         }
         binding.rvList.adapter = binderAdapter
         binderAdapter.setNewInstance(demoList)

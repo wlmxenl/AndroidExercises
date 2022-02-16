@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.github.wlmxenl.exercise.custom.halfcircle.HalfCircleView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#2196F3"
+        app:hcv_direction="UP"
+        app:hcv_height="@dimen/dp_28"
+        app:hcv_solid_color="@color/teal_700"
+        app:hcv_width="@dimen/dp_56" />
+
+    <com.github.wlmxenl.exercise.custom.halfcircle.HalfCircleView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="#2196F3"
+        app:hcv_direction="DOWN"
+        app:hcv_height="@dimen/dp_28"
+        app:hcv_solid_color="@color/teal_700"
+        app:hcv_width="@dimen/dp_56" />
+
+    <com.github.wlmxenl.exercise.custom.halfcircle.HalfCircleView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="#2196F3"
+        app:hcv_direction="LEFT"
+        app:hcv_height="@dimen/dp_56"
+        app:hcv_solid_color="@color/teal_700"
+        app:hcv_width="@dimen/dp_28" />
+
+    <com.github.wlmxenl.exercise.custom.halfcircle.HalfCircleView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="#2196F3"
+        app:hcv_direction="RIGHT"
+        app:hcv_height="@dimen/dp_56"
+        app:hcv_solid_color="@color/teal_700"
+        app:hcv_width="@dimen/dp_28" />
+
+</LinearLayout>

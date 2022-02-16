@@ -5,4 +5,16 @@
         <attr name="ftl_item_spacing" format="dimension" />
     </declare-styleable>
 
+    <declare-styleable name="HalfCircleView">
+        <attr name="hcv_width" format="dimension" />
+        <attr name="hcv_height" format="dimension" />
+        <attr name="hcv_solid_color" format="color" />
+        <attr name="hcv_direction" format="enum">
+            <enum name="UP" value="1" />
+            <enum name="DOWN" value="2" />
+            <enum name="LEFT" value="3" />
+            <enum name="RIGHT" value="4" />
+        </attr>
+    </declare-styleable>
+
 </resources>
