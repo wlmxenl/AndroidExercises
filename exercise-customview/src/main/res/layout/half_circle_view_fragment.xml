@@ -7,43 +7,96 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <com.github.wlmxenl.exercise.custom.halfcircle.HalfCircleView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#2196F3"
-        app:hcv_direction="UP"
-        app:hcv_height="@dimen/dp_28"
-        app:hcv_solid_color="@color/teal_700"
-        app:hcv_width="@dimen/dp_56" />
+        android:gravity="center"
+        android:orientation="horizontal">
 
-    <com.github.wlmxenl.exercise.custom.halfcircle.HalfCircleView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_10"
-        android:background="#2196F3"
-        app:hcv_direction="DOWN"
-        app:hcv_height="@dimen/dp_28"
-        app:hcv_solid_color="@color/teal_700"
-        app:hcv_width="@dimen/dp_56" />
+        <com.github.wlmxenl.exercise.custom.halfcircle.HalfCircleView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:hcv_direction="UP"
+            app:hcv_height="@dimen/dp_28"
+            app:hcv_solid_color="@color/teal_700"
+            app:hcv_width="@dimen/dp_56" />
 
-    <com.github.wlmxenl.exercise.custom.halfcircle.HalfCircleView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_10"
-        android:background="#2196F3"
-        app:hcv_direction="LEFT"
-        app:hcv_height="@dimen/dp_56"
-        app:hcv_solid_color="@color/teal_700"
-        app:hcv_width="@dimen/dp_28" />
+        <com.github.wlmxenl.exercise.custom.halfcircle.HalfCircleView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            app:hcv_direction="DOWN"
+            app:hcv_height="@dimen/dp_28"
+            app:hcv_solid_color="@color/teal_700"
+            app:hcv_width="@dimen/dp_56" />
 
-    <com.github.wlmxenl.exercise.custom.halfcircle.HalfCircleView
-        android:layout_width="wrap_content"
+        <com.github.wlmxenl.exercise.custom.halfcircle.HalfCircleView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            app:hcv_direction="LEFT"
+            app:hcv_height="@dimen/dp_56"
+            app:hcv_solid_color="@color/teal_700"
+            app:hcv_width="@dimen/dp_28" />
+
+        <com.github.wlmxenl.exercise.custom.halfcircle.HalfCircleView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            app:hcv_direction="RIGHT"
+            app:hcv_height="@dimen/dp_56"
+            app:hcv_solid_color="@color/teal_700"
+            app:hcv_width="@dimen/dp_28" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_10"
-        android:background="#2196F3"
-        app:hcv_direction="RIGHT"
-        app:hcv_height="@dimen/dp_56"
-        app:hcv_solid_color="@color/teal_700"
-        app:hcv_width="@dimen/dp_28" />
+        android:layout_marginTop="@dimen/dp_20"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.github.wlmxenl.exercise.custom.halfcircle.HalfCircleView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:hcv_direction="UP"
+            app:hcv_height="@dimen/dp_28"
+            app:hcv_solid_color="@color/teal_700"
+            app:hcv_stroke_width="@dimen/dp_1"
+            app:hcv_width="@dimen/dp_56" />
+
+        <com.github.wlmxenl.exercise.custom.halfcircle.HalfCircleView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            app:hcv_direction="DOWN"
+            app:hcv_height="@dimen/dp_28"
+            app:hcv_solid_color="@color/teal_700"
+            app:hcv_stroke_width="@dimen/dp_1"
+            app:hcv_width="@dimen/dp_56" />
+
+        <com.github.wlmxenl.exercise.custom.halfcircle.HalfCircleView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            app:hcv_direction="LEFT"
+            app:hcv_height="@dimen/dp_56"
+            app:hcv_solid_color="@color/teal_700"
+            app:hcv_stroke_width="@dimen/dp_1"
+            app:hcv_width="@dimen/dp_28" />
+
+        <com.github.wlmxenl.exercise.custom.halfcircle.HalfCircleView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            app:hcv_direction="RIGHT"
+            app:hcv_height="@dimen/dp_56"
+            app:hcv_solid_color="#2196F3"
+            app:hcv_stroke_width="@dimen/dp_1"
+            app:hcv_stroke_color="#E91E63"
+            app:hcv_width="@dimen/dp_28" />
+
+    </LinearLayout>
 
 </LinearLayout>

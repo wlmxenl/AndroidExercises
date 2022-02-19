@@ -27,19 +27,32 @@ class HalfCircleView(context: Context, attrs: AttributeSet?) : View(context, att
     private var mHeight = 0f
     private var mDirection = 1
     private val mPaint = Paint(Paint.ANTI_ALIAS_FLAG)
-    private var mSolidColor = Color.parseColor("#F3F3F3")
+    private var mSolidColor = 0
+
+    private var mStrokeWidth = 0f
+    private var mStrokeColor = 0
+
+    private var mEdgeOffset = 2f // 圆弧与边框重合位置向内偏移值，为0时圆弧与边框位置显示区效果在视觉上不够圆滑
 
     init {
         // 默认宽高
-        val defaultWH = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10f, context.resources.displayMetrics)
+        val defaultWH = TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_DIP,
+            10f,
+            context.resources.displayMetrics
+        )
 
         context.withStyledAttributes(attrs, R.styleable.HalfCircleView) {
             mWidth = getDimension(R.styleable.HalfCircleView_hcv_width, defaultWH)
             mHeight = getDimension(R.styleable.HalfCircleView_hcv_height, defaultWH)
-            mSolidColor = getColor(R.styleable.HalfCircleView_hcv_solid_color, mSolidColor)
             mDirection = getInt(R.styleable.HalfCircleView_hcv_direction, UP)
+
+            mStrokeWidth = getDimension(R.styleable.HalfCircleView_hcv_stroke_width, mStrokeWidth)
+            mSolidColor = getColor(R.styleable.HalfCircleView_hcv_solid_color, Color.BLACK)
+            mStrokeColor = getColor(R.styleable.HalfCircleView_hcv_stroke_color, Color.BLACK)
         }
 
+        mPaint.isDither = true
         mPaint.color = mSolidColor
     }
 
@@ -48,14 +61,30 @@ class HalfCircleView(context: Context, attrs: AttributeSet?) : View(context, att
     }
 
     override fun onDraw(canvas: Canvas) {
+        mPaint.strokeWidth = 0f
+        mPaint.color = mSolidColor
+        mPaint.style = Paint.Style.FILL
+
         when (mDirection) {
             UP, DOWN -> {
                 canvas.translate(0f, if (mDirection == UP) -mHeight else 0f)
-                canvas.drawOval(0f, 0f, mWidth, mHeight * 2, mPaint)
+                canvas.drawOval(mEdgeOffset, mEdgeOffset, mWidth - mEdgeOffset, mHeight * 2 - mEdgeOffset, mPaint)
+                if (mStrokeWidth > 0) {
+                    mPaint.strokeWidth = mStrokeWidth
+                    mPaint.color = mStrokeColor
+                    mPaint.style = Paint.Style.STROKE
+                    canvas.drawOval(mEdgeOffset, mEdgeOffset, mWidth - mEdgeOffset, mHeight * 2 - mEdgeOffset, mPaint)
+                }
             }
             LEFT, RIGHT -> {
                 canvas.translate(if (mDirection == LEFT) -mWidth else 0f, 0f)
-                canvas.drawOval(0f, 0f, mWidth * 2, mHeight, mPaint)
+                canvas.drawOval(mEdgeOffset, mEdgeOffset, mWidth * 2 - mEdgeOffset, mHeight - mEdgeOffset, mPaint)
+                if (mStrokeWidth > 0) {
+                    mPaint.strokeWidth = mStrokeWidth
+                    mPaint.color = mStrokeColor
+                    mPaint.style = Paint.Style.STROKE
+                    canvas.drawOval(mEdgeOffset, mEdgeOffset, mWidth * 2 - mEdgeOffset, mHeight - mEdgeOffset, mPaint)
+                }
             }
         }
     }
