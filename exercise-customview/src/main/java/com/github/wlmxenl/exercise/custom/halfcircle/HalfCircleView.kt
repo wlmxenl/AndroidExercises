@@ -23,30 +23,19 @@ class HalfCircleView(context: Context, attrs: AttributeSet?) : View(context, att
         private const val RIGHT = 4
     }
 
-    private var mWidth = 0f
-    private var mHeight = 0f
     private var mDirection = 1
     private val mPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private var mSolidColor = 0
-
     private var mStrokeWidth = 0f
     private var mStrokeColor = 0
-
     private var mEdgeOffset = 2f // 圆弧与边框重合位置向内偏移值，为0时圆弧与边框位置显示区效果在视觉上不够圆滑
 
+    private val mDefaultWidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+        56f, context.resources.displayMetrics).toInt()
+
     init {
-        // 默认宽高
-        val defaultWH = TypedValue.applyDimension(
-            TypedValue.COMPLEX_UNIT_DIP,
-            10f,
-            context.resources.displayMetrics
-        )
-
         context.withStyledAttributes(attrs, R.styleable.HalfCircleView) {
-            mWidth = getDimension(R.styleable.HalfCircleView_hcv_width, defaultWH)
-            mHeight = getDimension(R.styleable.HalfCircleView_hcv_height, defaultWH)
             mDirection = getInt(R.styleable.HalfCircleView_hcv_direction, UP)
-
             mStrokeWidth = getDimension(R.styleable.HalfCircleView_hcv_stroke_width, mStrokeWidth)
             mSolidColor = getColor(R.styleable.HalfCircleView_hcv_solid_color, Color.BLACK)
             mStrokeColor = getColor(R.styleable.HalfCircleView_hcv_stroke_color, Color.BLACK)
@@ -57,7 +46,16 @@ class HalfCircleView(context: Context, attrs: AttributeSet?) : View(context, att
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        setMeasuredDimension(mWidth.toInt(), mHeight.toInt())
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        var finalWidth = MeasureSpec.getSize(widthMeasureSpec)
+        if (MeasureSpec.getMode(widthMeasureSpec) != MeasureSpec.EXACTLY) {
+            finalWidth = mDefaultWidth
+        }
+        var finalHeight = MeasureSpec.getSize(heightMeasureSpec)
+        if (MeasureSpec.getMode(heightMeasureSpec) != MeasureSpec.EXACTLY) {
+            finalHeight = finalWidth / 2
+        }
+        setMeasuredDimension(finalWidth, finalHeight)
     }
 
     override fun onDraw(canvas: Canvas) {
@@ -67,23 +65,37 @@ class HalfCircleView(context: Context, attrs: AttributeSet?) : View(context, att
 
         when (mDirection) {
             UP, DOWN -> {
-                canvas.translate(0f, if (mDirection == UP) -mHeight else 0f)
-                canvas.drawOval(mEdgeOffset, mEdgeOffset, mWidth - mEdgeOffset, mHeight * 2 - mEdgeOffset, mPaint)
+                canvas.translate(0f, if (mDirection == UP) -height.toFloat() else 0f)
+                canvas.drawOval(mEdgeOffset, mEdgeOffset, width.toFloat() - mEdgeOffset, height * 2f - mEdgeOffset, mPaint)
+
                 if (mStrokeWidth > 0) {
                     mPaint.strokeWidth = mStrokeWidth
                     mPaint.color = mStrokeColor
                     mPaint.style = Paint.Style.STROKE
-                    canvas.drawOval(mEdgeOffset, mEdgeOffset, mWidth - mEdgeOffset, mHeight * 2 - mEdgeOffset, mPaint)
+
+                    canvas.drawOval(
+                        mEdgeOffset + mStrokeWidth / 2,
+                        mEdgeOffset + mStrokeWidth / 2,
+                        width.toFloat() - mStrokeWidth / 2,
+                        height * 2f - mEdgeOffset - mStrokeWidth / 2,
+                        mPaint)
                 }
             }
             LEFT, RIGHT -> {
-                canvas.translate(if (mDirection == LEFT) -mWidth else 0f, 0f)
-                canvas.drawOval(mEdgeOffset, mEdgeOffset, mWidth * 2 - mEdgeOffset, mHeight - mEdgeOffset, mPaint)
+                canvas.translate(if (mDirection == LEFT) -width.toFloat() else 0f, 0f)
+                canvas.drawOval(mEdgeOffset, mEdgeOffset, width * 2f - mEdgeOffset, height.toFloat() - mEdgeOffset, mPaint)
+
                 if (mStrokeWidth > 0) {
                     mPaint.strokeWidth = mStrokeWidth
                     mPaint.color = mStrokeColor
                     mPaint.style = Paint.Style.STROKE
-                    canvas.drawOval(mEdgeOffset, mEdgeOffset, mWidth * 2 - mEdgeOffset, mHeight - mEdgeOffset, mPaint)
+
+                    canvas.drawOval(
+                        mEdgeOffset + mStrokeWidth / 2,
+                        mEdgeOffset + mStrokeWidth / 2,
+                        width * 2f - mEdgeOffset - mStrokeWidth / 2f,
+                        height.toFloat() - mEdgeOffset - mStrokeWidth / 2f,
+                        mPaint)
                 }
             }
         }
