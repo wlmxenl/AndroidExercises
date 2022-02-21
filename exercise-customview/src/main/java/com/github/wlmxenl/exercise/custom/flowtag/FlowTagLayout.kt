@@ -92,4 +92,8 @@ class FlowTagLayout(context: Context, attrs: AttributeSet?) : ViewGroup(context,
     override fun generateDefaultLayoutParams(): LayoutParams {
         return MarginLayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)
     }
+
+    override fun shouldDelayChildPressedState(): Boolean {
+        return false
+    }
 }
