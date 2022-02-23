@@ -20,4 +20,9 @@
         android:name="com.github.wlmxenl.exercise.custom.halfcircle.HalfCircleViewFragment"
         tools:layout="@layout/half_circle_view_fragment" />
 
+    <fragment
+        android:id="@+id/scaleable_imageview_fragment"
+        android:name="com.github.wlmxenl.exercise.custom.scaleableiv.ScableImageViewFragment"
+        tools:layout="@layout/scaleable_imageview_fragment" />
+
 </navigation>
