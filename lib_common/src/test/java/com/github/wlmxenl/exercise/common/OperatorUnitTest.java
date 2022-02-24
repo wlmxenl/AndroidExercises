@@ -5,8 +5,8 @@ import org.junit.Test;
 /**
  * 操作符示例
  *
- * @Author wangzhengfu
- * @Date 2022/2/20
+ * @author wangzf
+ * @date 2022/2/20
  */
 public class OperatorUnitTest {
 

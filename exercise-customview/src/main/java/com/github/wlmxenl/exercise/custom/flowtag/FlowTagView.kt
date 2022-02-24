@@ -13,8 +13,8 @@ import kotlin.random.Random
 
 /**
  *
- * @Author wangzhengfu
- * @Date 2022/2/12
+ * @author wangzf
+ * @date 2022/2/12
  */
 class FlowTagView(context: Context, attrs: AttributeSet? = null) : View(context, attrs) {
 

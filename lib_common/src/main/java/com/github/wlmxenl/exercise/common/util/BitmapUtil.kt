@@ -8,8 +8,8 @@ import androidx.annotation.IntRange
 
 /**
  *
- * @Author wangzhengfu
- * @Date 2022/2/23
+ * @author wangzf
+ * @date 2022/2/23
  */
 object BitmapUtil {
 

@@ -12,8 +12,8 @@ import com.github.wlmxenl.exercise.custom.R
 
 /**
  * 半圆
- * @Author wangzhengfu
- * @Date 2022/2/16
+ * @author wangzf
+ * @date 2022/2/16
  */
 class HalfCircleView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
     companion object {

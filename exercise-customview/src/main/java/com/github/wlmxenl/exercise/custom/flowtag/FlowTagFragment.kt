@@ -10,8 +10,8 @@ import com.github.wlmxenl.exercise.custom.databinding.FlowTagFragmentBinding
 
 /**
  * FlowLayout 示例
- * @Author wangzhengfu
- * @Date 2022/2/13
+ * @author wangzf
+ * @date 2022/2/13
  */
 class FlowLayoutFragment : BaseFragment<FlowTagFragmentBinding>() {
 

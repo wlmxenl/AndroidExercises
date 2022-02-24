@@ -6,8 +6,8 @@ import com.github.wlmxenl.exercise.custom.databinding.ScaleableImageviewFragment
 
 /**
  *
- * @Author wangzhengfu
- * @Date 2022/2/23
+ * @author wangzf
+ * @date 2022/2/23
  */class ScableImageViewFragment : BaseFragment<ScaleableImageviewFragmentBinding>() {
 
     override fun onPageViewCreated(savedInstanceState: Bundle?) {

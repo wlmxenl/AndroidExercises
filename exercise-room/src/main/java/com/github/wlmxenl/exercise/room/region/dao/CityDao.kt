@@ -6,8 +6,8 @@ import com.github.wlmxenl.exercise.room.region.entity.City
 
 /**
  * 数据访问对象
- * @Author wangzhengfu
- * @Date 2022/2/11
+ * @author wangzf
+ * @date 2022/2/11
  */
 @Dao
 interface CityDao {

@@ -7,8 +7,8 @@ import androidx.room.PrimaryKey
 
 /**
  * 区县数据
- * @Author wangzhengfu
- * @Date 2022/2/11
+ * @author wangzf
+ * @date 2022/2/11
  */
 @Entity(
     tableName = "region_area",

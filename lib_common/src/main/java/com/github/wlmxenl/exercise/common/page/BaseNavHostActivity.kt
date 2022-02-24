@@ -9,8 +9,8 @@ import com.github.wlmxenl.exercise.common.databinding.CommonNavigationContainerB
 
 /**
  * Navigation 宿主页面基类
- * @Author wangzhengfu
- * @Date 2022/2/13
+ * @author wangzf
+ * @date 2022/2/13
  */
 abstract class BaseNavHostActivity : BaseActivity<CommonNavigationContainerBinding>() {
 

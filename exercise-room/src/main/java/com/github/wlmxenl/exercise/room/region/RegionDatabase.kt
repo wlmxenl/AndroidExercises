@@ -10,8 +10,8 @@ import com.github.wlmxenl.exercise.room.region.entity.Province
 
 /**
  *
- * @Author wangzhengfu
- * @Date 2022/2/11
+ * @author wangzf
+ * @date 2022/2/11
  */
 
 @Database(version = 1, entities = [Province::class, City::class, Area::class])

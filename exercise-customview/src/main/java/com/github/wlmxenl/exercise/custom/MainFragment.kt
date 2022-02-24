@@ -14,8 +14,8 @@ import com.github.wlmxenl.exercise.custom.databinding.MainRecycleItemBinding
 
 /**
  * MainFragment
- * @Author wangzhengfu
- * @Date 2022/2/13
+ * @author wangzf
+ * @date 2022/2/13
  */
 @Suppress("UNCHECKED_CAST")
 class MainFragment : BaseFragment<MainFragmentBinding>() {

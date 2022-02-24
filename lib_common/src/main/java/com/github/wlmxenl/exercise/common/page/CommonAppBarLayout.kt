@@ -11,8 +11,8 @@ import com.github.wlmxenl.exercise.common.databinding.CommonAppbarLayoutBinding
 
 /**
  *
- * @Author wangzhengfu
- * @Date 2022/2/13
+ * @author wangzf
+ * @date 2022/2/13
  */
 class CommonAppBarLayout(context: Context?) : RelativeLayout(context) {
     private val binding: CommonAppbarLayoutBinding

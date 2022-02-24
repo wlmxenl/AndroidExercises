@@ -11,8 +11,8 @@ import com.github.wlmxenl.exercise.common.R
 
 /**
  * Navigation 扩展, 添加默认动画支持
- * @Author wangzhengfu
- * @Date 2022/2/13
+ * @author wangzf
+ * @date 2022/2/13
  */
 
 fun Fragment.navigate(@IdRes actionId: Int, bundle: Bundle? = null, navOptions: NavOptions? = null) {

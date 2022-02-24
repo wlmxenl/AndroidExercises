@@ -10,8 +10,8 @@ import com.dylanc.viewbinding.base.ViewBindingUtil
 
 /**
  * 支持默认顶部应用栏、多状态布局的 Fragment 基类
- * @Author wangzhengfu
- * @Date 2022/2/13
+ * @author wangzf
+ * @date 2022/2/13
  */
 abstract class BaseFragment<VB : ViewBinding> : BasePageFragment<VB, CommonAppBarLayout>() {
 

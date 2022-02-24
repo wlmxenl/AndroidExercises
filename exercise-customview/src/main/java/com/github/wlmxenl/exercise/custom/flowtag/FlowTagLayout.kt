@@ -12,8 +12,8 @@ import kotlin.math.max
 
 /**
  *
- * @Author wangzhengfu
- * @Date 2022/2/12
+ * @author wangzf
+ * @date 2022/2/12
  */
 class FlowTagLayout(context: Context, attrs: AttributeSet?) : ViewGroup(context, attrs) {
     private val childrenBounds = mutableListOf<Rect>()

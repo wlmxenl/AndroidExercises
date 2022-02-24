@@ -19,8 +19,8 @@ import kotlin.math.min
 
 /**
  *
- * @Author wangzhengfu
- * @Date 2022/2/23
+ * @author wangzf
+ * @date 2022/2/23
  */
 class ScaleableImageView(context: Context, attrs: AttributeSet?) : View(context, attrs), Runnable {
     private val bitmap = BitmapUtil.decodeResource(
