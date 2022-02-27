@@ -25,4 +25,14 @@
         android:name="com.github.wlmxenl.exercise.custom.scaleableiv.ScableImageViewFragment"
         tools:layout="@layout/scaleable_imageview_fragment" />
 
+    <fragment
+        android:id="@+id/single_touch_sample_fragment"
+        android:name="com.github.wlmxenl.exercise.custom.toucnevent.SingleTouchViewFragment"
+        tools:layout="@layout/single_touch_sample_fragment" />
+
+    <fragment
+        android:id="@+id/multi_touch_sample_fragment"
+        android:name="com.github.wlmxenl.exercise.custom.toucnevent.MultiTouchViewFragment"
+        tools:layout="@layout/multi_touch_sample_fragment" />
+
 </navigation>

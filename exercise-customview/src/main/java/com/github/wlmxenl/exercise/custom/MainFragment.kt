@@ -40,6 +40,8 @@ class MainFragment : BaseFragment<MainFragmentBinding>() {
             add(Triple("FlowTagLayout", R.id.flow_tag_fragment, "流式标签布局"))
             add(Triple("HalfCircleView", R.id.half_circle_fragment, "半圆"))
             add(Triple("ScaleableImageView", R.id.scaleable_imageview_fragment, "可缩放滑动的 ImageView"))
+            add(Triple("SingleTouchView", R.id.single_touch_sample_fragment, "单点触摸View示例"))
+            add(Triple("NultiTouchView", R.id.single_touch_sample_fragment, "多点触摸View示例"))
         }
         binding.rvList.adapter = binderAdapter
         binderAdapter.setNewInstance(demoList)
