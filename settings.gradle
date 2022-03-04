@@ -19,6 +19,7 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "AndroidExercises"
+include ':lib_common'
 include ':exercise-room'
 include ':exercise-customview'
-include ':lib_common'
+include ':exercise-launchmodel'

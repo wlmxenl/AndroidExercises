@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">LaunchModel</string>
+
+    <string-array name="launch_model">
+        <item>standard</item>
+        <item>singleTop</item>
+        <item>singleTask</item>
+        <item>singleInstance</item>
+    </string-array>
+
+</resources>
