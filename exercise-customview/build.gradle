@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk rootProject.ext.compileSdkVersion
 
     defaultConfig {
         applicationId "com.github.wlmxenl.exercise.custom"
-        minSdk 21
-        targetSdk 31
+        minSdk rootProject.ext.minSdkVersion
+        targetSdk rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
@@ -38,11 +38,6 @@ android {
 }
 
 dependencies {
-
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'com.google.android.material:material:1.5.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
     implementation project(":lib_common")
 
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.7'
