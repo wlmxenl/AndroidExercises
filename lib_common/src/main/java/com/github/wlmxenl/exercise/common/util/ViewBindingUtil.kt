@@ -16,7 +16,7 @@
 
 @file:Suppress("UNCHECKED_CAST", "unused")
 
-package com.dylanc.viewbinding.base
+package com.github.wlmxenl.exercise.common.util
 
 import android.view.LayoutInflater
 import android.view.View

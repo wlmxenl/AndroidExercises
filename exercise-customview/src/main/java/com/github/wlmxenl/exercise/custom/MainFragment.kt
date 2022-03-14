@@ -5,9 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import cn.dripcloud.scaffold.arch.navigation.navigate
 import com.chad.library.adapter.base.BaseBinderAdapter
 import com.chad.library.adapter.base.binder.QuickViewBindingItemBinder
-import com.github.wlmxenl.exercise.common.navigation.navigate
 import com.github.wlmxenl.exercise.common.page.BaseFragment
 import com.github.wlmxenl.exercise.custom.databinding.MainFragmentBinding
 import com.github.wlmxenl.exercise.custom.databinding.MainRecycleItemBinding
