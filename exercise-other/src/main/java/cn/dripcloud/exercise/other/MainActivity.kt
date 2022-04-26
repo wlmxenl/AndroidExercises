@@ -11,8 +11,5 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        val maxHeightScrollView = findViewById<MaxHeightScrollView>(R.id.max_height_scrollview)
-        maxHeightScrollView.maxHeight = (ScreenUtils.getAppScreenHeight() * 0.6f).toInt()
     }
 }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="drawable_color_placeholder">#EEEEEE</drawable>
+
+    <style name="fresco_placeholder_icon">
+        <item name="backgroundImage">@drawable/drawable_color_placeholder</item>
+        <item name="placeholderImage">@mipmap/ic_placeholder</item>
+        <item name="placeholderImageScaleType">centerInside</item>
+        <item name="failureImage">@mipmap/ic_placeholder</item>
+        <item name="failureImageScaleType">centerInside</item>
+    </style>
+
+</resources>
