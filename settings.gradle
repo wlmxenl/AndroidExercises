@@ -21,6 +21,6 @@ dependencyResolutionManagement {
 rootProject.name = "AndroidExercises"
 include ':lib_common'
 //include ':exercise-room'
-//include ':exercise-customview'
+include ':exercise-customview'
 //include ':exercise-launchmodel'
-include ':exercise-other'
+//include ':exercise-other'

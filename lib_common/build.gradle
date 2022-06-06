@@ -47,10 +47,10 @@ dependencies {
     api "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}"
 
     api 'com.blankj:utilcodex:1.31.0'
-    api 'com.github.wlmxenl:ScreenAdaptation:1.0.1'
 
     api 'com.github.wlmxenl.AndroidScaffold:scaffold-page:a3501dab7f'
     api 'com.github.wlmxenl.AndroidScaffold:scaffold-arch:a3501dab7f'
+    api 'com.github.wlmxenl:ScreenAdaptation:1.1'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

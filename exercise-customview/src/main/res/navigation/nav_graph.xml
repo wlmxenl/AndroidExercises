@@ -35,4 +35,9 @@
         android:name="com.github.wlmxenl.exercise.custom.toucnevent.MultiTouchViewFragment"
         tools:layout="@layout/multi_touch_sample_fragment" />
 
+    <fragment
+        android:id="@+id/vip_card_list"
+        android:name="com.github.wlmxenl.exercise.custom.vipcard.VipCardListFragment"
+        tools:layout="@layout/vip_card_list_fragment" />
+
 </navigation>

@@ -37,6 +37,7 @@ class MainFragment : BaseFragment<MainFragmentBinding>() {
             navigate(itemData.second)
         }
         val demoList = mutableListOf<Any>().apply {
+            add(Triple("VipCard", R.id.vip_card_list, "YXT VIP CARD"))
             add(Triple("FlowTagLayout", R.id.flow_tag_fragment, "流式标签布局"))
             add(Triple("HalfCircleView", R.id.half_circle_fragment, "半圆"))
             add(Triple("ScaleableImageView", R.id.scaleable_imageview_fragment, "可缩放滑动的 ImageView"))

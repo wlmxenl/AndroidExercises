@@ -8,8 +8,8 @@ class MainActivity : BaseNavHostActivity() {
         return R.navigation.nav_graph
     }
 
-//    override fun getCustomStartDestination(): Int {
-//        return R.id.scaleable_imageview_fragment
-//    }
+    override fun getCustomStartDestination(): Int {
+        return R.id.vip_card_list
+    }
 
 }
