@@ -40,4 +40,9 @@
         android:name="com.github.wlmxenl.exercise.custom.vipcard.VipCardListFragment"
         tools:layout="@layout/vip_card_list_fragment" />
 
+    <fragment
+        android:id="@+id/porter_duff_model_fragment"
+        android:name="com.github.wlmxenl.exercise.custom.xfermode.PorterDuffModelFragment"
+        tools:layout="@layout/porter_duff_model_fragment" />
+
 </navigation>
