@@ -17,4 +17,22 @@
         </attr>
     </declare-styleable>
 
+    <declare-styleable name="YxCouponView">
+        <attr name="yxc_stroke_width" format="dimension" />
+        <attr name="yxc_stroke_color" format="color" />
+        <attr name="yxc_corner_radius" format="dimension" />
+
+        <attr name="yxc_left_text" format="string" />
+        <attr name="yxc_left_text_horizontal_padding" format="dimension" />
+        <attr name="yxc_right_text_horizontal_padding" format="dimension" />
+
+
+        <attr name="yxc_left_bg_color" format="color" />
+        <attr name="yxc_right_text" format="string" />
+        <attr name="yxc_text_color" format="color" />
+        <attr name="yxc_text_size" format="dimension" />
+        <attr name="yxc_text_vertical_padding" format="dimension" />
+
+    </declare-styleable>
+
 </resources>

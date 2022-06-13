@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#F4F4F4">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/ctl_1"
@@ -58,5 +59,47 @@
             app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.github.wlmxenl.exercise.custom.vipcard.YxCouponView
+        android:id="@+id/yxc_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ctl_2"
+        app:yxc_corner_radius="@dimen/dp_2"
+        app:yxc_left_bg_color="#FFEEEE"
+        app:yxc_left_text="送"
+        app:yxc_left_text_horizontal_padding="@dimen/dp_3"
+        app:yxc_right_text="鱼喜券1张"
+        app:yxc_right_text_horizontal_padding="@dimen/dp_4"
+        app:yxc_stroke_color="#FEC1C1"
+        app:yxc_stroke_width="@dimen/dp_1"
+        app:yxc_text_color="#FC5758"
+        app:yxc_text_size="@dimen/sp_15"
+        app:yxc_text_vertical_padding="@dimen/dp_4_5" />
+
+    <com.github.wlmxenl.exercise.custom.vipcard.YxCouponView
+        android:id="@+id/yxc_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yxc_1"
+        app:yxc_corner_radius="@dimen/dp_1"
+        app:yxc_left_bg_color="#FFEEEE"
+        app:yxc_left_text="送"
+        app:yxc_left_text_horizontal_padding="@dimen/dp_2"
+        app:yxc_right_text="鱼喜券1张"
+        app:yxc_right_text_horizontal_padding="@dimen/dp_4"
+        app:yxc_stroke_color="#FEC1C1"
+        app:yxc_stroke_width="@dimen/dp_1"
+        app:yxc_text_color="#FC5758"
+        app:yxc_text_size="@dimen/sp_11"
+        app:yxc_text_vertical_padding="@dimen/dp_3" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
