@@ -9,7 +9,7 @@ class MainActivity : BaseNavHostActivity() {
     }
 
     override fun getCustomStartDestination(): Int {
-        return R.id.vip_card_list
+        return R.id.vip_card_list_fragment
     }
 
 }
