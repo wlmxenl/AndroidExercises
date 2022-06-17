@@ -37,6 +37,7 @@ class MainFragment : BaseFragment<MainFragmentBinding>() {
             navigate(itemData.second)
         }
         val demoList = mutableListOf<Any>().apply {
+            add(Triple("TextView Span", R.id.textview_span_fragment, "TextView -> SpannableString"))
             add(Triple("PorterDuff.Mode", R.id.porter_duff_model_fragment, "Paint.setXfermode(xxx)"))
             add(Triple("VipCard", R.id.vip_card_list_fragment, "YXT VIP CARD"))
             add(Triple("FlowTagLayout", R.id.flow_tag_fragment, "流式标签布局"))

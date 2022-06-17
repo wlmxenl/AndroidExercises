@@ -45,4 +45,9 @@
         android:name="com.github.wlmxenl.exercise.custom.xfermode.PorterDuffModelFragment"
         tools:layout="@layout/porter_duff_model_fragment" />
 
+    <fragment
+        android:id="@+id/textview_span_fragment"
+        android:name="com.github.wlmxenl.exercise.custom.textview_span.TextViewSpanFragment"
+        tools:layout="@layout/textview_span_fragment" />
+
 </navigation>
