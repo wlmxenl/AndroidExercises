@@ -2,7 +2,6 @@ package com.github.wlmxenl.exercise.common.page
 
 import android.content.Context
 import android.graphics.Color
-import android.opengl.Visibility
 import android.view.View
 import android.widget.RelativeLayout
 import com.blankj.utilcode.util.BarUtils

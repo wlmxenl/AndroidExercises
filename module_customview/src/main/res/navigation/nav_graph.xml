@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/main_fragment">
+
+    <fragment
+        android:id="@+id/main_fragment"
+        android:name="com.example.customview.MainFragment"
+        tools:layout="@layout/main_fragment" />
+
+    <fragment
+        android:id="@+id/flow_tag_fragment"
+        android:name="com.example.customview.flowtag.FlowLayoutFragment"
+        tools:layout="@layout/flow_tag_fragment" />
+
+    <fragment
+        android:id="@+id/half_circle_fragment"
+        android:name="com.example.customview.halfcircle.HalfCircleViewFragment"
+        tools:layout="@layout/half_circle_view_fragment" />
+
+    <fragment
+        android:id="@+id/scaleable_imageview_fragment"
+        android:name="com.example.customview.scaleableiv.ScableImageViewFragment"
+        tools:layout="@layout/scaleable_imageview_fragment" />
+
+    <fragment
+        android:id="@+id/single_touch_sample_fragment"
+        android:name="com.example.customview.toucnevent.SingleTouchViewFragment"
+        tools:layout="@layout/single_touch_sample_fragment" />
+
+    <fragment
+        android:id="@+id/multi_touch_sample_fragment"
+        android:name="com.example.customview.toucnevent.MultiTouchViewFragment"
+        tools:layout="@layout/multi_touch_sample_fragment" />
+
+    <fragment
+        android:id="@+id/vip_card_list_fragment"
+        android:name="com.example.customview.vipcard.VipCardListFragment"
+        tools:layout="@layout/vip_card_list_fragment" />
+
+    <fragment
+        android:id="@+id/porter_duff_model_fragment"
+        android:name="com.example.customview.xfermode.PorterDuffModelFragment"
+        tools:layout="@layout/porter_duff_model_fragment" />
+
+    <fragment
+        android:id="@+id/textview_span_fragment"
+        android:name="com.example.customview.textview_span.TextViewSpanFragment"
+        tools:layout="@layout/textview_span_fragment" />
+
+</navigation>
