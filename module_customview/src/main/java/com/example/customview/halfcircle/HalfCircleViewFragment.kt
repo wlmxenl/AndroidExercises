@@ -2,7 +2,7 @@ package com.example.customview.halfcircle
 
 import android.os.Bundle
 import com.github.wlmxenl.exercise.common.page.BaseFragment
-import com.github.wlmxenl.exercise.custom.databinding.HalfCircleViewFragmentBinding
+import com.example.customview.databinding.HalfCircleViewFragmentBinding
 
 /**
  *

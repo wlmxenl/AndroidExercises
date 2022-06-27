@@ -13,7 +13,7 @@ import android.view.View
 import android.widget.OverScroller
 import androidx.core.view.GestureDetectorCompat
 import com.github.wlmxenl.exercise.common.util.BitmapUtil
-import com.github.wlmxenl.exercise.custom.R
+import com.example.customview.R
 import kotlin.math.max
 import kotlin.math.min
 

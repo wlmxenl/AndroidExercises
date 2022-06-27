@@ -2,8 +2,8 @@ package com.example.customview.vipcard
 
 import android.os.Bundle
 import com.github.wlmxenl.exercise.common.page.BaseFragment
-import com.github.wlmxenl.exercise.custom.databinding.MultiTouchSampleFragmentBinding
-import com.github.wlmxenl.exercise.custom.databinding.VipCardListFragmentBinding
+import com.example.customview.databinding.MultiTouchSampleFragmentBinding
+import com.example.customview.databinding.VipCardListFragmentBinding
 
 /**
  *

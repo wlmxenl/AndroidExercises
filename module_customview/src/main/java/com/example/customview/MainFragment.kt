@@ -8,10 +8,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import cn.dripcloud.scaffold.arch.navigation.navigate
 import com.chad.library.adapter.base.BaseBinderAdapter
 import com.chad.library.adapter.base.binder.QuickViewBindingItemBinder
+import com.example.customview.databinding.MainFragmentBinding
+import com.example.customview.databinding.MainRecycleItemBinding
 import com.github.wlmxenl.exercise.common.page.BaseFragment
-import com.github.wlmxenl.exercise.custom.R
-import com.github.wlmxenl.exercise.custom.databinding.MainFragmentBinding
-import com.github.wlmxenl.exercise.custom.databinding.MainRecycleItemBinding
 
 /**
  * MainFragment

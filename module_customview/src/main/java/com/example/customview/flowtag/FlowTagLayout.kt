@@ -7,7 +7,7 @@ import android.util.AttributeSet
 import android.view.ViewGroup
 import androidx.core.content.withStyledAttributes
 import androidx.core.view.children
-import com.github.wlmxenl.exercise.custom.R
+import com.example.customview.R
 import kotlin.math.max
 
 /**

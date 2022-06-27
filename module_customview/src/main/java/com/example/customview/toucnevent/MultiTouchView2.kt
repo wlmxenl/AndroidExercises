@@ -8,7 +8,7 @@ import android.util.TypedValue
 import android.view.MotionEvent
 import android.view.View
 import com.github.wlmxenl.exercise.common.util.BitmapUtil
-import com.github.wlmxenl.exercise.custom.R
+import com.example.customview.R
 
 /**
  * 多点触摸 View 示例

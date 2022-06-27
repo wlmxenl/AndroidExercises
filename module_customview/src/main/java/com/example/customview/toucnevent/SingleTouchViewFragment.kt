@@ -2,7 +2,7 @@ package com.example.customview.toucnevent
 
 import android.os.Bundle
 import com.github.wlmxenl.exercise.common.page.BaseFragment
-import com.github.wlmxenl.exercise.custom.databinding.SingleTouchSampleFragmentBinding
+import com.example.customview.databinding.SingleTouchSampleFragmentBinding
 
 /**
  *

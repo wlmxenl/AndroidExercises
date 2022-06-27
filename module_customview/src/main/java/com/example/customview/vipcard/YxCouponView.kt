@@ -9,7 +9,7 @@ import com.blankj.utilcode.util.ColorUtils
 import com.github.wlmxenl.exercise.common.util.dp2pxFloat
 import com.github.wlmxenl.exercise.common.util.dp2pxInt
 import com.github.wlmxenl.exercise.common.util.sp2pxFloat
-import com.github.wlmxenl.exercise.custom.R
+import com.example.customview.R
 
 /**
  *

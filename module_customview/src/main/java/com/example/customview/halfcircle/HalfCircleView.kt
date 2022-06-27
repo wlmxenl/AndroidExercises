@@ -8,7 +8,7 @@ import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.View
 import androidx.core.content.withStyledAttributes
-import com.github.wlmxenl.exercise.custom.R
+import com.example.customview.R
 
 /**
  * 半圆

@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.util.TypedValue
 import android.view.ViewGroup
 import androidx.core.view.setPadding
+import com.example.customview.databinding.FlowTagFragmentBinding
 import com.github.wlmxenl.exercise.common.page.BaseFragment
-import com.github.wlmxenl.exercise.custom.databinding.FlowTagFragmentBinding
 
 /**
  * FlowLayout 示例

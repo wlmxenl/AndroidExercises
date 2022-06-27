@@ -2,7 +2,7 @@ package com.example.customview.textview_span
 
 import android.os.Bundle
 import com.github.wlmxenl.exercise.common.page.BaseFragment
-import com.github.wlmxenl.exercise.custom.databinding.TextviewSpanFragmentBinding
+import com.example.customview.databinding.TextviewSpanFragmentBinding
 
 /**
  *

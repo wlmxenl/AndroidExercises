@@ -2,9 +2,9 @@ package com.example.customview.xfermode
 
 import android.os.Bundle
 import com.github.wlmxenl.exercise.common.page.BaseFragment
-import com.github.wlmxenl.exercise.custom.databinding.MultiTouchSampleFragmentBinding
-import com.github.wlmxenl.exercise.custom.databinding.PorterDuffModelFragmentBinding
-import com.github.wlmxenl.exercise.custom.databinding.VipCardListFragmentBinding
+import com.example.customview.databinding.MultiTouchSampleFragmentBinding
+import com.example.customview.databinding.PorterDuffModelFragmentBinding
+import com.example.customview.databinding.VipCardListFragmentBinding
 
 /**
  *

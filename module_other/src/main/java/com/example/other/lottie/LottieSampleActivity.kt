@@ -1,7 +1,7 @@
 package com.example.other.lottie
 
 import android.os.Bundle
-import cn.dripcloud.exercise.other.databinding.LottieSampleActivityBinding
+import com.example.other.databinding.LottieSampleActivityBinding
 import com.github.wlmxenl.exercise.common.page.BaseActivity
 
 /**
